@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CourseRepository extends PagingAndSortingRepository<Course, Long> {
 
-   // Methods to be added
 }
