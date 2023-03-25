@@ -1,6 +1,8 @@
 package com.manning.sbip.ch03.model;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.Objects;
 
