@@ -9,4 +9,5 @@ public interface CourseRepository extends CrudRepository<Course, Long> {
 
     Iterable<Course> findAllByCategoryAndRating(String category, int rating);
 
+
 }
