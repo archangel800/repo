@@ -2,7 +2,6 @@ package com.manning.sbip.ch06.controller;
 
 import com.manning.sbip.ch06.model.Course;
 import com.manning.sbip.ch06.service.CourseService;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
