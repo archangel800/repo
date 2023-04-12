@@ -1,8 +1,9 @@
 package org.example;
 
+import java.util.Iterator;
 import java.util.List;
 
-public class MyArrayList<T> {
+public class MyArrayList<T> implements Iterable<T> {
     private static final int DEFAULT_CAPACITY = 10;
     private Object[] elements;
     private int size;
@@ -92,5 +93,10 @@ public class MyArrayList<T> {
         Object[] newElements = new Object[newLength];
         System.arraycopy(elements, 0, newElements, 0, size);
         elements = newElements;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyArrayListCustomIterator(elements);
     }
 }
