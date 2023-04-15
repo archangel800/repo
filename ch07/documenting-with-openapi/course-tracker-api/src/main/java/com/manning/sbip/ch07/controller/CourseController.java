@@ -24,7 +24,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/courses/")
-@Tag(name = "Course Controller", description = "This REST controller provide services to manage courses in the Course Tracker application")
+@Tag(name = "Course Controller", description = "This REST controller provides services to manage courses in the Course Tracker application")
 public class CourseController {
 	
 	private CourseService courseService;
@@ -50,35 +50,35 @@ public class CourseController {
 	
 	@GetMapping("category/{name}")
 	@ResponseStatus(code = HttpStatus.OK)
-	@Operation(summary = "Provides course details for the supplied course category from the Course Tracker application")
+	@Operation(summary = "Provides course details for the supplied category from the Course Tracker application")
 	public Iterable<Course> getCourseByCategory(@PathVariable("name") String category) {
 		return courseService.getCoursesByCategory(category);
 	}
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@Operation(summary = "Creates a new course in the Course Tracker application")
+	@Operation(summary = "Creates a new course in the course tracker application")
 	public Course createCourse(@Valid @RequestBody Course course) {
 		return courseService.createCourse(course);
 	}
 	
 	@PutMapping("{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	@Operation(summary = "Updates the course details in the Course Tracker application for the supplied course id")
+	@Operation(summary = "Updates a course in the course tracker application")
 	public void updateCourse(@PathVariable("id") long courseId, @Valid @RequestBody Course course) {
 		courseService.updateCourse(courseId, course);
 	}
 	
 	@DeleteMapping("{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	@Operation(summary = "Deletes the course details for the supplied course id from the Course Tracker application")
+	@Operation(summary = "Deletes a course using courseId in the course tracker application")
 	void deleteCourseById(@PathVariable("id") long courseId) {
 		courseService.deleteCourseById(courseId);
 	}
 	
 	@DeleteMapping
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	@Operation(summary = "Deletes all courses from the Course Tracker application")
+	@Operation(summary = "Deletes all the courses in course tracker application")
 	void deleteCourses() {
 		courseService.deleteCourses();
 	}
